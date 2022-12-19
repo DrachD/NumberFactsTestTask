@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">NumberFactsTestTask</string>
+    <string name="zero">0</string>
+    <string name="get_fact">get fact</string>
+    <string name="interesting_facts_about_numbers">Interesting facts about numbers</string>
+    <string name="get_fact_about_random_number">get fact about random number</string>
+    <string name="history_of_user_requests">History of user requests</string>
+    <string name="number">number</string>
+</resources>
