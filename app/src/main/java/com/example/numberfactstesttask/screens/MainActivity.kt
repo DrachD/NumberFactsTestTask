@@ -4,12 +4,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.NavigationUI
 import com.example.numberfactstesttask.R
 import com.example.numberfactstesttask.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private var navController: NavController? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,8 +20,13 @@ class MainActivity : AppCompatActivity() {
             setContentView(root)
         }
 
-        val navController = getRootNavController()
-        prepareRootNavController(navController)
+        navController = getRootNavController()
+        prepareRootNavController(navController!!)
+        NavigationUI.setupActionBarWithNavController(this, navController!!)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return (navController?.navigateUp() ?: false) || super.onSupportNavigateUp()
     }
 
     private fun getRootNavController(): NavController {

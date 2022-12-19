@@ -79,7 +79,7 @@ class HomeViewModel @Inject constructor(
     private fun getNumberFacts(str: String): Int {
         var number = ""
 
-        for (char in str?.indices!!) {
+        for (char in str.indices) {
             if (str[char] != ' ') {
                 number += str[char]
             } else {
